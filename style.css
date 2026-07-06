@@ -1,0 +1,274 @@
+/* Reset e variabili */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --bg: #f8f4f0;
+    --bg-card: #DDE6D8;
+    --primary: #015a2a;
+    --primary-light: #d0e0c8;
+    --secondary: #c7b7a3;
+    --accent: #015a2a;
+    --text: #2d4a2d;
+    --text-light: #3d6b3d;
+    --border: #c5d5bd;
+    --shadow: 0 8px 24px rgba(0,0,0,0.06);
+    --radius: 20px;
+    --font: 'Inter', sans-serif;
+}
+body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 2rem 1.5rem;
+}
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 2.5rem 2rem;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--border);
+}
+header h1 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--primary);
+}
+header h2 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--text-light);
+    margin-top: 0.25rem;
+}
+header .dates {
+    margin-top: 0.75rem;
+    font-size: 1.1rem;
+    color: var(--text-light);
+    background: var(--primary-light);
+    display: inline-block;
+    padding: 0.3rem 1.5rem;
+    border-radius: 40px;
+    font-weight: 500;
+}
+header .organizers {
+    margin-top: 1.2rem;
+    font-size: 1rem;
+    color: var(--text-light);
+}
+header .organizers strong {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+/* Sezioni */
+section {
+    margin-bottom: 3.5rem;
+}
+.section-title {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--primary);
+    margin-bottom: 1.8rem;
+    border-left: 6px solid var(--accent);
+    padding-left: 1rem;
+}
+
+/* Griglia relatori */
+.speakers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.8rem;
+}
+.speaker-card {
+    background: #ecf3e8;
+    border-radius: 16px;
+    padding: 1.5rem 1.2rem 1.2rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.speaker-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(1, 90, 42, 0.12);
+}
+.speaker-card img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #c5d5bd;
+    margin-bottom: 0.8rem;
+    border: 4px solid white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+.speaker-card h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.15rem;
+}
+.speaker-card .affiliation {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 0.6rem;
+    font-weight: 400;
+}
+/* Biografia espandibile */
+.speaker-card details {
+    width: 100%;
+    margin-top: 0.3rem;
+}
+.speaker-card details summary {
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--primary);
+    background: var(--primary-light);
+    padding: 0.25rem 1rem;
+    border-radius: 30px;
+    display: inline-block;
+    transition: background 0.2s;
+    border: none;
+    outline: none;
+    list-style: none;
+}
+.speaker-card details summary::-webkit-details-marker {
+    display: none;
+}
+.speaker-card details summary:hover {
+    background: #bcd0b2;
+}
+.speaker-card details .bio {
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+    color: var(--text);
+    text-align: left;
+    line-height: 1.5;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+.speaker-card details .bio p {
+    margin-bottom: 0.5rem;
+}
+.bio-en, .bio-zh {
+    margin-bottom: 0.8rem;
+    padding: 0.5rem 0.6rem;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.4);
+}
+.bio-en p, .bio-zh p {
+    margin-bottom: 0;
+}
+.bio-en strong, .bio-zh strong {
+    color: var(--primary);
+    font-weight: 600;
+}
+.bio-zh {
+    border-top: 1px dashed var(--border);
+    padding-top: 0.8rem;
+    margin-top: 0.3rem;
+}
+.speaker-card .online-tag {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 0.15rem 0.8rem;
+    border-radius: 30px;
+    margin-top: 0.3rem;
+    letter-spacing: 0.3px;
+}
+
+/* Tabella programma */
+.program-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+.program-table th {
+    background: var(--primary-light);
+    color: var(--primary);
+    font-weight: 600;
+    padding: 0.8rem 0.6rem;
+    text-align: left;
+    border-bottom: 2px solid var(--border);
+}
+.program-table td {
+    padding: 0.7rem 0.6rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+}
+.program-table tr:last-child td {
+    border-bottom: none;
+}
+.program-table .time {
+    white-space: nowrap;
+    font-weight: 500;
+    color: var(--primary);
+    width: 10%;
+}
+.program-table .day {
+    font-weight: 600;
+    color: var(--text);
+    width: 10%;
+}
+.program-table .title {
+    width: 42%;
+}
+.program-table .speaker {
+    width: 28%;
+    color: var(--text-light);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    body { padding: 1rem 0.5rem; }
+    .container { padding: 1.5rem 1rem; }
+    header h1 { font-size: 2rem; }
+    header h2 { font-size: 1.2rem; }
+    .section-title { font-size: 1.5rem; }
+    .speakers-grid { grid-template-columns: 1fr; }
+    .program-table { font-size: 0.8rem; }
+    .program-table th, .program-table td { padding: 0.4rem 0.3rem; }
+    .program-table .day { width: 15%; }
+    .program-table .time { width: 12%; }
+    .bio-en, .bio-zh {
+        padding: 0.3rem 0.4rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Footer */
+footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--border);
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+footer a {
+    color: var(--primary);
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
