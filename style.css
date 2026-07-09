@@ -272,3 +272,42 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+/* Registration */
+.registration-box {
+    background: #ecf3e8;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+.registration-box p {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.register-btn {
+    display: inline-block;
+    font-family: var(--font);
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    background: var(--primary);
+    padding: 0.8rem 2.4rem;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 12px rgba(1, 90, 42, 0.2);
+}
+.register-btn:hover {
+    background: #013f1d;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(1, 90, 42, 0.28);
+}
+.register-btn:active {
+    transform: translateY(0);
+}
